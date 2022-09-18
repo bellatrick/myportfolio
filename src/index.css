@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base{
+  body{
+      @apply bg-black
+  }
+} */
+
+@layer components {
+  .hoverAnimation{
+      @apply hover:bg-[#d9d9d9] hover:bg-opacity-10
+       rounded-full cursor-pointer w-[52px] h-[52px]
+       xl:w-auto xl:h-auto xl:py-3 xl:px-4 transition duration-200 ease-out
+  }
+  .icon{
+      @apply cursor-pointer w-9 h-9 hover:bg-[#1d9bf0]
+      hover:bg-opacity-10 flex items-center justify-center
+      rounded-full transition ease-out
+  }
+  .container{
+    @apply max-w-[1200px] mx-auto
+  }
+  /* .dark{
+    @apply bg-gray-900 text-white
+  } */
+  .buttonStyle{
+    @apply rounded px-5 py-2.5 overflow-hidden bg-primary relative hover:bg-gradient-to-r
+     hover:from-primary hover:to-secondary text-white hover:ring-2
+     hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300
+  }
+  .buttonAnimate{
+    @apply absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform
+     translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease-in-out
+  }
+}
+.workCard{
+  width: 450px;
+  height: 300px;
+  position: relative;
+  pointer-events: none;
+}
+.workCard img{
+  max-width: 100%;
+  height: 100%;
+}
+.workCard .frame{
+  width: 70%;
+  height: 80%;
+  overflow: hidden;
+  bottom: 0;
+  pointer-events: visible;
+
+}
+.workCard .frame::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 150%;
+  background-image: linear-gradient(90deg, #cd6e36, #d400ff);
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.workCard:hover .frame::before {
+        opacity: 1;
+        animation-play-state: running;
+    }
+    .frame,
+    .name {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .frame:hover .frame .bg::before {
+      background-color:rgba(rgb(14, 14, 14), rgb(10, 10, 10), rgb(65, 65, 65), alpha);
+  }
+  .bg {
+    position: absolute;
+    inset: 4px;
+}
+.bg::before {
+  background-color:rgba(rgb(14, 14, 14), rgb(10, 10, 10), rgb(65, 65, 65), alpha);
+}
+@keyframes rotate {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
