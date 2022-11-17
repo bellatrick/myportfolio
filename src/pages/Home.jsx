@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const socials = [
-    { title: "LinkedIn", link: "#" },
+    { title: "LinkedIn", link: "https://www.linkedin.com/in/busayo-samuel-872b38137" },
     { title: "Github", link: "https://github.com/bellatrick" },
-    { title: "Twitter", link: "#" },
+    { title: "Twitter", link: "https://twitter.com/Bellaspeaksss" },
   ];
   return (
     <Layout>
