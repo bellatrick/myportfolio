@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useContext, useEffect} from "react";
 import {
   HomeIcon,
   LightBulbIcon,
@@ -8,13 +8,14 @@ import {
   MailIcon,
 } from "@heroicons/react/outline";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { darkState } from "../atoms/modalAtom";
+import { DarkContext } from "../store/dark";
 const Sidebar = () => {
   const navigate = useNavigate();
+  const {dispatch,state}=useContext(DarkContext)
+  const {darkMode}=state
   const { pathname } = useLocation();
   const splitLocation = pathname.split("/");
-  const [darkMode, setdarkMode] = useRecoilState(darkState);
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -24,7 +25,7 @@ const Sidebar = () => {
   }, [darkMode]);
 
   const handleDarkMode = () => {
-    setdarkMode(!darkMode);
+    dispatch({type:"TOGGLE"})
     // darkMode && localStorage.setItem("dark", "dark");
     // !darkMode && localStorage.removeItem("dark");
   };
