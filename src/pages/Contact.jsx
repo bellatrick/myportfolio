@@ -44,7 +44,7 @@ const Contact = () => {
           >
             <div>
               <label
-                className="font-bold text-gray-500 dark:text-white"
+                className="font-bold my-1 text-gray-500 dark:text-white"
                 htmlFor="name"
               >
                 Name
@@ -59,7 +59,7 @@ const Contact = () => {
             </div>
             <div>
               <label
-                className="font-bold text-gray-500 dark:text-white"
+                className="font-bold my-1 text-gray-500 dark:text-white"
                 htmlFor="email"
               >
                 Email address
@@ -74,7 +74,7 @@ const Contact = () => {
             </div>
             <div className="">
               <label
-                className="font-bold text-gray-500 dark:text-white"
+                className="font-bold my-1 text-gray-500 dark:text-white"
                 htmlFor="email"
               >
                 Message

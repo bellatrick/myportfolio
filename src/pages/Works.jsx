@@ -16,9 +16,7 @@ import twitterwebflow from "../assets/twitterwebflow.png";
 import "../styles/card.scss";
 const Works = () => {
   const [tab, setTab] = useState("react");
-  const handleChangeTab = (tab) => {
-    setTab(tab);
-  };
+ 
   const items = {
     react: [
       {
@@ -124,12 +122,13 @@ const Works = () => {
       },
     ],
   };
+  const item= items[tab]
   return (
     <Layout>
       <div className="">
         <div className="flex font-bold justify-between mt-4 sm:justify-start gap-[20px] sm:gap-[80px] mb-[80px]">
           <p
-            onClick={() => handleChangeTab("react")}
+            onClick={() => setTab("react")}
             className={`${
               tab === "react" && "tabitem"
             } hover:-translate-y-1 uppercase p-2 cursor-pointer`}
@@ -137,7 +136,7 @@ const Works = () => {
             React
           </p>
           <p
-            onClick={() => handleChangeTab("wordpress")}
+            onClick={() => setTab("wordpress")}
             className={`${
               tab === "wordpress" && "tabitem"
             } hover:-translate-y-1 uppercase p-2 cursor-pointer`}
@@ -145,7 +144,7 @@ const Works = () => {
             Wordpress
           </p>
           <p
-            onClick={() => handleChangeTab("webflow")}
+            onClick={() => setTab("webflow")}
             className={`${
               tab === "webflow" && "tabitem"
             } hover:-translate-y-1 uppercase p-2 cursor-pointer`}
@@ -154,7 +153,7 @@ const Works = () => {
           </p>
         </div>
         <div class="wrap relative flex gap-[40px] justify-center sm:justify-start flex-wrap mb-6">
-          {items[tab].map((item) => (
+          {item.map((item) => (
             <div className="card flex flex-col w-72 border rounded-lg border-primary">
               <div className="h-[180px] w-full">
                 <img

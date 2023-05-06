@@ -72,7 +72,7 @@ const Resume = () => {
               </li>
             </ul>
             <div className="mb-[100px]">
-              <h2 className="text-primary text-xl">PORTFOLIO</h2>
+              <h2 className="text-primary my-1 text-xl">PORTFOLIO</h2>
               <p>
                 Links to my works can be found{" "}
                 <Link

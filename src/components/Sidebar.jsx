@@ -30,7 +30,7 @@ const Sidebar = () => {
     // !darkMode && localStorage.removeItem("dark");
   };
   return (
-    <div className="fixed bg-white dark:bg-gray-900 z-10 bottom-0 left-0 sm:static flex flex-col justify-center items-center ">
+    <div className="fixed bg-white dark:bg-gray-900 z-[100] bottom-0 left-0 sm:static flex flex-col justify-center items-center ">
       <div className="border-2 border-b-0 sm:border-b-2 border-l-0 sm:border-r-2 border-r-0 sm:border-l-2  border-primary sm:rounded-md py-4 sm:w-[60px] justify-around sm:justify-center items-center w-screen flex sm:flex-col gap-6">
         <div
           className={` ${

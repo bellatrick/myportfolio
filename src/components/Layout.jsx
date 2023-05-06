@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <Header />
       <div className="flex container gap-8 min-h-[calc(100vh_-_80px)] items-center">
         <Sidebar />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 pb-[40px]">{children}</div>
       </div>
     </div>
   );
